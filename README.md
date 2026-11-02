@@ -72,8 +72,6 @@ OPENAI_MODEL=qwen-plus
 OPENAI_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
 ```
 
-`.env` 包含密钥，禁止提交到 GitHub。
-
 ## 启动方式
 
 ### 可视化网页和 FastAPI
