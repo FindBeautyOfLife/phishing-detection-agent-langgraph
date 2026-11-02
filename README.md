@@ -58,7 +58,13 @@ python -m uvicorn api_service:app --reload
 
 ## 配置大语言模型
 
-复制 `.env.example` 为项目根目录下的 `.env`，填写阿里云百炼配置：
+请先复制配置模板：
+
+```powershell
+copy .env.example .env
+```
+
+然后编辑项目根目录下的 `.env` 文件，填写阿里云百炼配置：
 
 ```env
 OPENAI_API_KEY=你的阿里云百炼API_Key
