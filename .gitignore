@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.py[cod]
+data/
+outputs/
+phishing_model.pkl
+feature_names.pkl
+model_comparison_results.csv

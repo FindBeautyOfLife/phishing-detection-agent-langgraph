@@ -1,0 +1,15 @@
+pandas
+numpy
+scikit-learn
+lightgbm
+joblib
+langchain
+langchain-openai
+langgraph
+python-dotenv
+matplotlib
+pillow
+openpyxl
+fastapi
+uvicorn
+packaging

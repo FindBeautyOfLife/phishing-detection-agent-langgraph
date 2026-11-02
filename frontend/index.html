@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>钓鱼网站检测智能体</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">盾</div>
+          <div>
+            <strong>URL Guard</strong>
+            <span>钓鱼网站检测智能体</span>
+          </div>
+        </div>
+
+        <button class="new-chat" id="newChat">＋ 新建检测会话</button>
+        <div class="sidebar-section">
+          <span class="section-label">快捷任务</span>
+          <button class="side-action" data-prompt="检测 https://www.baidu.com">⌕ <span>检测 URL</span></button>
+          <button class="side-action" data-prompt="批量检测以下网址：&#10;https://www.baidu.com&#10;https://example.com">▦ <span>批量检测</span></button>
+          <button class="side-action" data-prompt="生成检测报告">▤ <span>生成报告</span></button>
+          <button class="side-action" data-prompt="生成风险图表">◒ <span>风险图表</span></button>
+          <button class="side-action" data-prompt="生成安全提示图">▣ <span>安全海报</span></button>
+        </div>
+        <div class="sidebar-note">
+          <span class="status-dot"></span>
+          <div><strong>服务在线</strong><small>模型与工作流已准备就绪</small></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">SECURITY WORKSPACE</span>
+            <h1>智能检测工作台</h1>
+          </div>
+          <div class="topbar-actions">
+            <a href="/docs" target="_blank" class="ghost-button">API 文档 ↗</a>
+            <button class="icon-button" id="clearChat" title="清空对话">⌫</button>
+          </div>
+        </header>
+
+        <section class="workspace">
+          <div class="chat-panel panel">
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">ASSISTANT</span>
+                <h2>检测对话</h2>
+              </div>
+              <div class="heading-actions">
+                <button class="collapse-button" id="collapseMessages">折叠早期</button>
+                <span class="live-badge"><i></i> 在线</span>
+              </div>
+            </div>
+            <div class="messages" id="messages">
+              <div class="message assistant">
+                <div class="avatar">盾</div>
+                <div class="bubble welcome">
+                  <strong>你好，我是 URL Guard</strong>
+                  <p>我可以检测单个或批量网址，解释风险原因，并生成报告、表格、图表和安全提示图。</p>
+                  <div class="suggestions">
+                    <button data-prompt="检测 https://www.baidu.com">检测一个网址</button>
+                    <button data-prompt="你会做什么">查看支持功能</button>
+                    <button data-prompt="生成安全提示图">生成安全海报</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="composer-wrap">
+              <div class="composer">
+                <textarea id="promptInput" rows="1" placeholder="输入网址、问题或生成指令…"></textarea>
+                <button id="sendButton" class="send-button" aria-label="发送">➤</button>
+              </div>
+              <div class="composer-hint">Enter 发送 · Shift + Enter 换行</div>
+            </div>
+          </div>
+
+          <aside class="results-panel">
+            <div class="panel result-overview panel">
+              <div class="panel-heading compact">
+                <div>
+                  <span class="panel-kicker">LIVE INSIGHTS</span>
+                  <h2>检测结果</h2>
+                </div>
+                <span id="resultCount" class="count-badge">等待检测</span>
+              </div>
+              <div id="resultsContent" class="empty-state">
+                <div class="empty-icon">⌁</div>
+                <strong>结果将在这里呈现</strong>
+                <span>发送一个 URL 开始分析</span>
+              </div>
+            </div>
+            <div class="panel assets-panel">
+              <div class="panel-heading compact">
+                <div>
+                  <span class="panel-kicker">GENERATED FILES</span>
+                  <h2>生成中心</h2>
+                </div>
+                <button class="collapse-button" id="toggleAssets">收起</button>
+              </div>
+              <div id="assetsContent" class="asset-list">
+                <div class="asset-empty">完成检测后，可从对话或快捷任务生成文件。</div>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
